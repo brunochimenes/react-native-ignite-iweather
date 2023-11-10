@@ -48,15 +48,12 @@ jobs:
           token: ${{ secrets.EAS_EXPO_TOKEN }}
         
       - name: Build
-        run: eas build --platform android --profile preview --no-interactive --no-wait
-
-
-        
-    
+        run: eas build --platform android --profile preview --non-interactive --no-wait
 
     #   - name: Install Dependencies
     #     uses: npm install
 
+    #     Configuração da chave google play console
     #   - name: Get config file
     #     env: 
     #       GOOGLE_SERVICES_64: ${{ secrets.EAS_GOOGLE_PLAY_API }}
@@ -66,3 +63,4 @@ jobs:
 
     #   - name: Build and Submit
     #     run: EXPO_APPLE_APP_SPECIFIC_PASSWORD=${{ secrets.EAS_APPLE_APP_SPECIFIC_PASSWORD }} eas build --platform all --profile preview --non-interactive --auto-submit-with-profile=preview --no-wait
+    #     run: EXPO_APPLE_APP_SPECIFIC_PASSWORD=${{ secrets.EAS_APPLE_APP_SPECIFIC_PASSWORD }} eas build --platform all --profile production --non-interactive --auto-submit-with-profile=preview --no-wait
