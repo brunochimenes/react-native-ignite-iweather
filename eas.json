@@ -37,7 +37,7 @@
       },
       "ios": {
         "appleId": "email",
-        "ascAppId": "senha do app store"
+        "ascAppId": "senha"
       }
     }
   }
