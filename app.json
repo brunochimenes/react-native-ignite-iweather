@@ -16,14 +16,18 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.brunao.iweather"
+      "bundleIdentifier": "com.brunao.iweather",
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#13131A"
       },
-      "package": "com.brunao.iweather"
+      "package": "com.brunao.iweather",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -35,6 +39,9 @@
       "eas": {
         "projectId": "61e45839-2ce9-4e00-89b0-73cc2d9da772"
       }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/61e45839-2ce9-4e00-89b0-73cc2d9da772"
     }
   }
 }
