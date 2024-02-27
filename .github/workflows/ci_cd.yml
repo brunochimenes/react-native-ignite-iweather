@@ -24,8 +24,8 @@ jobs:
 
       - name: Run Tests
         run: npm test
-  
-  CD: 
+
+  CD:
     name: Continuous Delivery
     runs-on: ubuntu-latest
 
@@ -49,13 +49,13 @@ jobs:
 
       # - name: Install Dependencies
       #   uses: npm install
-        
+
       - name: Build
         run: eas build --platform android --profile preview --non-interactive --no-wait
 
     #     Configuração da chave google play console
     #   - name: Get config file
-    #     env: 
+    #     env:
     #       GOOGLE_SERVICES_64: ${{ secrets.EAS_GOOGLE_PLAY_API }}
     #     run: |
     #       echo $GOOGLE_SERVICES_64 > google-services.json.b64

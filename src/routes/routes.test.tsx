@@ -1,12 +1,15 @@
-import { act, screen, waitFor } from "@testing-library/react-native"
-import { Routes } from "@routes/index"
-import { saveStorageCity } from "@libs/asyncStorage/cityStorage"
-import { render } from "@__tests__/utils/customRender"
-import { api } from "@services/api"
-import { mockWeatherAPIResponse } from "@__tests__/mocks/api/mockWeatherAPIResponse"
+import { act, screen, waitFor } from "@testing-library/react-native";
+
+import { saveStorageCity } from "@libs/asyncStorage/cityStorage";
+import { mockWeatherAPIResponse } from "@__tests__/mocks/api/mockWeatherAPIResponse";
+import { render } from "@__tests__/utils/customRender";
+
+import { Routes } from "@routes/index";
+
+import { api } from "@services/api";
 
 describe("Routes", () => {
-  it('should be render Search screen when not city selected', async () => {
+  it("should be render Search screen when not city selected", async () => {
     render(<Routes />);
 
     const title = await waitFor(() => screen.findByText(/^escolha um local/i));
@@ -14,22 +17,22 @@ describe("Routes", () => {
     expect(title).toBeTruthy();
   });
 
-  it('shoul be render Dashboard screen when has city selected', async () => {
-    jest.spyOn(api, 'get').mockResolvedValue({ data: mockWeatherAPIResponse })
+  it("shoul be render Dashboard screen when has city selected", async () => {
+    jest.spyOn(api, "get").mockResolvedValue({ data: mockWeatherAPIResponse });
 
     const city = {
-      id: '1',
-      name: 'São Paulo',
+      id: "1",
+      name: "São Paulo",
       latitude: 123,
-      longitude: 456
-    }
-    
-    await saveStorageCity(city)
+      longitude: 456,
+    };
 
-    await act(() => waitFor(() => render(<Routes />)))
+    await saveStorageCity(city);
 
-    const title = screen.getByText(city.name)
+    await act(() => waitFor(() => render(<Routes />)));
 
-    expect(title).toBeTruthy()
-  })
-})
+    const title = screen.getByText(city.name);
+
+    expect(title).toBeTruthy();
+  });
+});

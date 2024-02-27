@@ -1,19 +1,24 @@
-import { theme } from '@styles/theme';
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
+
+import { theme } from "@styles/theme";
 
 export const styles = StyleSheet.create({
   container: {
+    flexDirection: "row",
+    width: "100%",
     height: 56,
-    width: '100%',
+
     backgroundColor: theme.colors.gray_600,
+
+    fontFamily: theme.fonts.regular,
+    fontSize: 16,
+
     borderRadius: 8,
     paddingHorizontal: 20,
-    fontSize: 16,
-    fontFamily: theme.fonts.regular,
-    flexDirection: 'row'
   },
   input: {
     flex: 1,
+
     color: theme.colors.white,
-  }
+  },
 });
